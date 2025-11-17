@@ -17,6 +17,5 @@ export class AppException extends HttpException {
             },
             statusCode,
         );
-        console.log('Exception thrown:', { message, statusCode, key, token });
     }
 }

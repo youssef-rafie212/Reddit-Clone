@@ -13,4 +13,12 @@ export class UserTokensService {
     async create(data: { user: string; token: string }) {
         return await this.userTokenModel.create(data);
     }
+
+    async findOne(filter: { [key: string]: any }) {
+        return await this.userTokenModel.findOne(filter);
+    }
+
+    async deleteMany(filter: Partial<UserToken>) {
+        await this.userTokenModel.deleteMany(filter);
+    }
 }

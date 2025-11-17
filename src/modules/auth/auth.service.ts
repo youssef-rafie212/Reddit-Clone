@@ -43,6 +43,7 @@ export class AuthService {
             otp,
             otpExpireAt,
             expireAt: new Date(Date.now() + 60 * 60 * 1000),
+            dataCompleted: true,
         };
 
         const user = await this.usersService.create(createData);
@@ -191,5 +192,19 @@ export class AuthService {
         const userObj = this.returnObject.user(user);
 
         return { token, userObj };
+    }
+
+    async signout(userId: string) {
+        const user = await this.usersService.findById(userId);
+
+        if (!user) {
+            throw new AppException(
+                this.i18nService.t('messages.userNotFound'),
+                404,
+            );
+        }
+
+        await this.authHelper.deleteAllUserDevices(userId);
+        await this.authHelper.deleteAllUserTokens(userId);
     }
 }

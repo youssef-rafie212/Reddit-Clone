@@ -16,4 +16,8 @@ export class DevicesService {
     async findOne(filter: { [key: string]: any }) {
         return await this.deviceModel.findOne(filter);
     }
+
+    async deleteMany(filter: Partial<Device>) {
+        await this.deviceModel.deleteMany(filter);
+    }
 }

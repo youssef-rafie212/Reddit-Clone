@@ -11,6 +11,7 @@ import { NodeMailerModule } from 'src/services/nodemailer/mailer.module';
 import { Duplicate } from './validation/duplicate';
 import { PasswordsMatch } from './validation/passwords-match';
 import { ValidCountry } from './validation/valid-country';
+import { AuthenticateGuard } from './guards/authenticate.guard';
 
 @Module({
     imports: [
@@ -28,6 +29,7 @@ import { ValidCountry } from './validation/valid-country';
         Duplicate,
         PasswordsMatch,
         ValidCountry,
+        AuthenticateGuard,
     ],
 })
 export class AuthModule {}

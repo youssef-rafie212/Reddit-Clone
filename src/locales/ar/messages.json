@@ -56,5 +56,7 @@
     "loginSuccess": "تم تسجيل الدخول بنجاح.",
     "invalidCredentials": "بيانات الاعتماد غير صالحة.",
     "accountNotVerified": "الحساب غير موثق.",
-    "dataIncomplete": "البيانات غير مكتملة."
+    "dataIncomplete": "البيانات غير مكتملة.",
+    "unauthorized": "غير مصرح لك.",
+    "signoutSuccess": "تم تسجيل الخروج بنجاح."
 }

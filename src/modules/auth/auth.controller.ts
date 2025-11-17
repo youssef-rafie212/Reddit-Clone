@@ -2,7 +2,9 @@ import {
     Body,
     Controller,
     Post,
+    Req,
     UploadedFile,
+    UseGuards,
     UseInterceptors,
 } from '@nestjs/common';
 import { AuthService } from './auth.service';
@@ -13,6 +15,7 @@ import { I18nService } from 'nestjs-i18n';
 import { RequestOtpDto } from './dto/request-otp.dto';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
 import { SigninDto } from './dto/signin.dto';
+import { AuthenticateGuard } from './guards/authenticate.guard';
 
 @Controller('auth')
 export class AuthController {
@@ -72,6 +75,18 @@ export class AuthController {
                 token,
                 user,
             },
+        );
+    }
+
+    @Post('signout')
+    @UseGuards(AuthenticateGuard)
+    async signout(@Req() request: Request) {
+        await this.authService.signout(request['user']['id']);
+
+        return ApiUtil.formatResponse(
+            200,
+            this.i18nService.t('messages.signoutSuccess'),
+            {},
         );
     }
 }

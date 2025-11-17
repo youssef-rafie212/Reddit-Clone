@@ -91,4 +91,12 @@ export class AuthHelper {
                 return null;
         }
     }
+
+    async deleteAllUserTokens(userId: string) {
+        await this.userTokensService.deleteMany({ user: userId });
+    }
+
+    async deleteAllUserDevices(userId: string) {
+        await this.devicesServices.deleteMany({ user: userId });
+    }
 }
