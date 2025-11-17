@@ -15,6 +15,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { User } from '../users/entities/user.entity';
 import { Model } from 'mongoose';
 import { AuthUtil } from 'src/common/utils/auth-util';
+import { ResetPasswordDto } from './dto/reset-password';
 
 @Injectable()
 export class AuthService {
@@ -206,5 +207,34 @@ export class AuthService {
 
         await this.authHelper.deleteAllUserDevices(userId);
         await this.authHelper.deleteAllUserTokens(userId);
+    }
+
+    async resetPassword(data: ResetPasswordDto) {
+        const user = await this.authHelper.getUserByIdentifier(
+            this.userModel,
+            data.identifier,
+        );
+
+        if (!user) {
+            throw new AppException(
+                this.i18nService.t('messages.userNotFound'),
+                400,
+            );
+        }
+
+        if (!user.canResetPassword) {
+            throw new AppException(
+                this.i18nService.t('messages.cannotResetPassword'),
+                401,
+            );
+        }
+
+        user.password = data.password;
+        user.canResetPassword = false;
+
+        await user.save();
+
+        await this.authHelper.deleteAllUserTokens(user.id);
+        await this.authHelper.deleteAllUserDevices(user.id);
     }
 }

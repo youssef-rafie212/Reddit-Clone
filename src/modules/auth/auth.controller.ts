@@ -16,6 +16,7 @@ import { RequestOtpDto } from './dto/request-otp.dto';
 import { VerifyOtpDto } from './dto/verify-otp.dto';
 import { SigninDto } from './dto/signin.dto';
 import { AuthenticateGuard } from './guards/authenticate.guard';
+import { ResetPasswordDto } from './dto/reset-password';
 
 @Controller('auth')
 export class AuthController {
@@ -86,6 +87,17 @@ export class AuthController {
         return ApiUtil.formatResponse(
             200,
             this.i18nService.t('messages.signoutSuccess'),
+            {},
+        );
+    }
+
+    @Post('reset-password')
+    async resetPasswor(@Body() data: ResetPasswordDto) {
+        await this.authService.resetPassword(data);
+
+        return ApiUtil.formatResponse(
+            200,
+            this.i18nService.t('messages.passwordResetSuccess'),
             {},
         );
     }

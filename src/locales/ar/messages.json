@@ -58,5 +58,7 @@
     "accountNotVerified": "الحساب غير موثق.",
     "dataIncomplete": "البيانات غير مكتملة.",
     "unauthorized": "غير مصرح لك.",
-    "signoutSuccess": "تم تسجيل الخروج بنجاح."
+    "signoutSuccess": "تم تسجيل الخروج بنجاح.",
+    "cannotResetPassword": "لا يمكن تغيير كلمة المرور.",
+    "passwordResetSuccess": "تم تغيير كلمة المرور بنجاح."
 }

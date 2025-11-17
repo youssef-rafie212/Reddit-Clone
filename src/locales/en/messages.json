@@ -58,5 +58,7 @@
     "accountNotVerified": "Account not verified.",
     "dataIncomplete": "Data incomplete.",
     "unauthorized": "Unauthorized.",
-    "signoutSuccess": "Signout successful."
+    "signoutSuccess": "Signout successful.",
+    "cannotResetPassword": "Cannot reset password.",
+    "passwordResetSuccess": "Password reset successful."
 }
