@@ -24,6 +24,9 @@ export class User {
     country: string | Country;
 
     @Prop()
+    bio: string;
+
+    @Prop()
     otp?: string;
 
     @Prop()
