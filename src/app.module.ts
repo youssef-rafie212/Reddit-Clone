@@ -18,6 +18,14 @@ import { NodeMailerModule } from './services/nodemailer/mailer.module';
 import { AuthenticaModule } from './services/authentica/authentica.module';
 import { SharedModule } from './common/modules/shared-module';
 import { UsersCommonModule } from './modules/users-common/users-common.module';
+import { CommunitiesModule } from './modules/communities/communities.module';
+import { CommunityMembersModule } from './modules/community-members/community-members.module';
+import { FollowsModule } from './modules/follows/follows.module';
+import { PostsModule } from './modules/posts/posts.module';
+import { CommentsModule } from './modules/comments/comments.module';
+import { ReportsModule } from './modules/reports/reports.module';
+import { BlocksModule } from './modules/blocks/blocks.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
 
 @Module({
     imports: [
@@ -38,6 +46,14 @@ import { UsersCommonModule } from './modules/users-common/users-common.module';
         AuthenticaModule,
         SharedModule,
         UsersCommonModule,
+        CommunitiesModule,
+        CommunityMembersModule,
+        FollowsModule,
+        PostsModule,
+        CommentsModule,
+        ReportsModule,
+        BlocksModule,
+        NotificationsModule,
     ],
     controllers: [],
     providers: [

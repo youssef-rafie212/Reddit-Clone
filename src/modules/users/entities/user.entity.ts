@@ -47,6 +47,9 @@ export class User {
     @Prop({ default: true })
     isNotify: boolean;
 
+    @Prop({ default: 0 })
+    notificationsCount: number;
+
     @Prop({ default: 'user', enum: ['user'] })
     type: string;
 
