@@ -14,7 +14,7 @@ export class PasswordsMatch implements ValidatorConstraintInterface {
 
         const obj: any = validationArguments.object;
 
-        return value === obj.password;
+        return value === (obj.password || obj.newPassword);
     }
 
     defaultMessage(): string {

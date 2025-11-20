@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { forwardRef, Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { UsersModule } from '../users/users.module';
@@ -15,7 +15,7 @@ import { AuthenticateGuard } from './guards/authenticate.guard';
 
 @Module({
     imports: [
-        UsersModule,
+        forwardRef(() => UsersModule),
         CountriesModule,
         DevicesModule,
         UserTokensModule,
@@ -31,5 +31,6 @@ import { AuthenticateGuard } from './guards/authenticate.guard';
         ValidCountry,
         AuthenticateGuard,
     ],
+    exports: [AuthService, AuthHelper],
 })
 export class AuthModule {}

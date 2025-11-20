@@ -1,5 +1,5 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, Schema as MongooseSchema } from 'mongoose';
+import { Document, Schema as MongooseSchema, Query } from 'mongoose';
 import { Community } from 'src/modules/communities/entities/community.entity';
 import { User } from 'src/modules/users/entities/user.entity';
 
@@ -39,3 +39,15 @@ export class Post {
 export type PostDocument = Post & Document;
 
 export const PostSchema = SchemaFactory.createForClass(Post);
+
+PostSchema.pre<Query<PostDocument, PostDocument>>(/^find/, function (next) {
+    this.populate({
+        path: 'author',
+        select: 'name avatar',
+    });
+    this.populate({
+        path: 'community',
+        select: 'name avatar',
+    });
+    next();
+});

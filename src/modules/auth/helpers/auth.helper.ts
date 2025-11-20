@@ -24,6 +24,7 @@ export class AuthHelper {
         fieldValue: string,
         updateId?: string,
     ) {
+        console.log('update id', updateId);
         for (const model of models) {
             const query = {
                 [fieldName]: fieldValue,

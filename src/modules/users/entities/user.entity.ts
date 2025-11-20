@@ -50,6 +50,18 @@ export class User {
     @Prop({ default: 0 })
     notificationsCount: number;
 
+    @Prop({ default: 0 })
+    postsCount: number;
+
+    @Prop({ default: 0 })
+    commentsCount: number;
+
+    @Prop({ default: 0 })
+    communitiesCount: number;
+
+    @Prop({ default: 0 })
+    followersCount: number;
+
     @Prop({ default: 'user', enum: ['user'] })
     type: string;
 

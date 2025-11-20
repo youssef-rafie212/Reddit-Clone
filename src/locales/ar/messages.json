@@ -60,5 +60,22 @@
     "unauthorized": "غير مصرح لك.",
     "signoutSuccess": "تم تسجيل الخروج بنجاح.",
     "cannotResetPassword": "لا يمكن تغيير كلمة المرور.",
-    "passwordResetSuccess": "تم تغيير كلمة المرور بنجاح."
+    "passwordResetSuccess": "تم تغيير كلمة المرور بنجاح.",
+    "profileFetched": "تم جلب الملف الشخصي بنجاح.",
+    "bioRequired": "السيرة الذاتية مطلوبة.",
+    "invalidBioLength": "طول السيرة الذاتية غير صالح.",
+    "invalidBio": "السيرة الذاتية غير صالحة.",
+    "profileUpdated": "تم تحديث الملف الشخصي بنجاح.",
+    "followersFetched": "تم جلب المتابعين بنجاح.",
+    "communitiesFetched": "تم جلب المجتمعات بنجاح.",
+    "postsFetched": "تم جلب المنشورات بنجاح.",
+    "passwordUpdated": "تم تحديث كلمة المرور بنجاح.",
+    "newPasswordRequired": "كلمة المرور الجديدة مطلوبة.",
+    "invalidNewPasswordLength": "طول كلمة المرور الجديدة غير صالح.",
+    "invalidNewPassword": "كلمة المرور الجديدة غير صالحة.",
+    "oldPasswordRequired": "كلمة المرور القديمة مطلوبة.",
+    "invalidOldPasswordLength": "طول كلمة المرور القديمة غير صالح.",
+    "invalidOldPassword": "كلمة المرور القديمة غير صالحة.",
+    "wrongPassword": "كلمة المرور غير صحيحة.",
+    "blocksFetched": "تم جلب المحظورين بنجاح."
 }

@@ -60,5 +60,22 @@
     "unauthorized": "Unauthorized.",
     "signoutSuccess": "Signout successful.",
     "cannotResetPassword": "Cannot reset password.",
-    "passwordResetSuccess": "Password reset successful."
+    "passwordResetSuccess": "Password reset successful.",
+    "profileFetched": "Profile fetched successfully.",
+    "bioRequired": "Bio is required.",
+    "invalidBioLength": "Invalid bio length.",
+    "invalidBio": "Invalid bio.",
+    "profileUpdated": "Profile updated successfully.",
+    "followersFetched": "Followers fetched successfully.",
+    "communitiesFetched": "Communities fetched successfully.",
+    "postsFetched": "Posts fetched successfully.",
+    "passwordUpdated": "Password updated successfully.",
+    "newPasswordRequired": "New password is required.",
+    "invalidNewPasswordLength": "Invalid new password length.",
+    "invalidNewPassword": "Invalid new password.",
+    "oldPasswordRequired": "Old password is required.",
+    "invalidOldPasswordLength": "Invalid old password length.",
+    "invalidOldPassword": "Invalid old password.",
+    "wrongPassword": "Wrong password.",
+    "blocksFetched": "Blocks fetched successfully."
 }

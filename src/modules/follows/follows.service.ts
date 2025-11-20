@@ -1,14 +1,28 @@
 import { Injectable } from '@nestjs/common';
+import { InjectModel } from '@nestjs/mongoose';
+import { Follow } from './entities/follow.entity';
+import { Model } from 'mongoose';
 
 @Injectable()
 export class FollowsService {
-    create() {}
+    constructor(
+        @InjectModel(Follow.name) private readonly followModel: Model<Follow>,
+    ) {}
 
-    findAll() {}
+    async getAll(
+        filter: { [key: string]: any },
+        page: number = 1,
+        limit: number = 10,
+    ) {
+        const skip = (page - 1) * limit;
 
-    findOne() {}
+        const [totalCount, follows] = await Promise.all([
+            this.followModel.find(filter).countDocuments(),
+            this.followModel.find(filter).skip(skip).limit(limit),
+        ]);
 
-    update() {}
+        const totalPages = Math.ceil(totalCount / limit);
 
-    remove() {}
+        return { follows, totalCount, page, totalPages };
+    }
 }

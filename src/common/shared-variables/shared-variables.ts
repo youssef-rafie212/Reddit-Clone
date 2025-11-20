@@ -19,4 +19,12 @@ export class SharedVariables {
     get COUNTRY_IMAGES(): string {
         return '/uploads/countries/';
     }
+
+    get POST_MEDIA(): string {
+        return '/uploads/posts/';
+    }
+
+    get COMMUNITY_AVATAR_IMAGES(): string {
+        return '/uploads/communities/avatars/';
+    }
 }

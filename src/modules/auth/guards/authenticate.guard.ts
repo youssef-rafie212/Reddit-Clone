@@ -57,7 +57,8 @@ export class AuthenticateGuard implements CanActivate {
             request['user'] = user;
 
             return true;
-        } catch {
+        } catch (error) {
+            console.log(error);
             throw new AppException(this.i18n.t('messages.unauthorized'), 401);
         }
     }

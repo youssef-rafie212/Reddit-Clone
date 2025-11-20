@@ -25,4 +25,8 @@ export class ImageUtil {
 
         return filename;
     }
+
+    static getAvatarPath(parent: string, avatar: string) {
+        return `./public/uploads/${parent}/avatars/${avatar}`;
+    }
 }
